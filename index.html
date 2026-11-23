@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper & Pixel — Vintage Digital Studio</title>
+<meta name="description" content="Paper & Pixel: PPTs, Excel & Word docs, Insta inspos, cards and wallpapers with a vintage touch. Starting at just ₹6.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cutive+Mono&family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f1e4c8; --paper-dark:#e2cfa5; --ink:#3b2a1a; --sepia:#7a5230;
+  --rust:#a8472b; --teal:#3f6b66; --mustard:#d6a33a; --cream:#fbf3de;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Special Elite',monospace; color:var(--ink); line-height:1.6;
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(255,255,255,.35), transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(120,80,30,.18), transparent 55%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .22  0 0 0 0 .1  0 0 0 .22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',serif}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+section{padding:80px 0;position:relative}
+.hand{font-family:'Caveat',cursive}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(241,228,200,.92);backdrop-filter:blur(6px);border-bottom:3px double var(--sepia)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:10px 22px;max-width:1180px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{font-family:'Playfair Display',serif;font-size:1.5rem;letter-spacing:1px}
+.brand b i{color:var(--rust);font-style:italic}
+nav ul{display:flex;gap:24px;list-style:none}
+nav ul a{text-decoration:none;font-size:.95rem;border-bottom:2px dashed transparent;padding-bottom:2px}
+nav ul a:hover{border-color:var(--rust);color:var(--rust)}
+@media(max-width:760px){nav ul{display:none}}
+
+/* HERO */
+.hero{padding:70px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.est{display:inline-block;border:2px solid var(--rust);color:var(--rust);padding:4px 14px;transform:rotate(-3deg);letter-spacing:3px;font-size:.8rem;margin-bottom:18px}
+.hero h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;font-weight:800}
+.hero h1 span{color:var(--rust);font-style:italic}
+.hero p{margin:20px 0 28px;font-size:1.1rem;max-width:520px}
+.btn{display:inline-block;padding:13px 26px;background:var(--ink);color:var(--cream);text-decoration:none;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--rust);transition:.2s;cursor:pointer;font-family:inherit;font-size:1rem}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--rust)}
+.btn.alt{background:transparent;color:var(--ink);margin-left:10px}
+.hero-photos{position:relative;height:460px}
+.polaroid{position:absolute;background:#fffdf6;padding:12px 12px 46px;box-shadow:0 14px 30px rgba(60,35,10,.35);transition:.3s}
+.polaroid img{display:block;width:100%;height:100%;object-fit:cover;filter:sepia(.55) contrast(1.05) saturate(.9)}
+.polaroid figcaption{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-family:'Caveat',cursive;font-size:1.4rem}
+.polaroid:hover{transform:rotate(0) scale(1.06)!important;z-index:20}
+.tape{position:absolute;width:95px;height:28px;background:rgba(214,163,58,.65);top:-12px;left:50%;margin-left:-47px;transform:rotate(-4deg);box-shadow:0 1px 3px rgba(0,0,0,.2);
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.25) 0 6px,transparent 6px 12px)}
+.p1{width:250px;height:300px;top:0;left:0;transform:rotate(-7deg)}
+.p2{width:240px;height:290px;top:70px;right:0;transform:rotate(6deg);z-index:2}
+.p3{width:220px;height:260px;bottom:0;left:90px;transform:rotate(-2deg);z-index:3}
+.p1 img,.p2 img,.p3 img{height:calc(100% - 0px)}
+
+/* TICKER */
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:10px 0;border-block:4px double var(--mustard)}
+.ticker div{display:inline-block;animation:slide 28s linear infinite;letter-spacing:3px;font-size:.9rem}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* TITLES */
+.title{text-align:center;margin-bottom:50px}
+.title h2{font-size:clamp(2rem,4vw,3rem)}
+.title .hand{font-size:1.7rem;color:var(--rust)}
+.title::after{content:"✦ ✦ ✦";display:block;color:var(--sepia);margin-top:8px;letter-spacing:10px}
+
+/* PRICES */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:30px}
+.ticket{position:relative;background:var(--cream);padding:28px 22px 24px;text-align:center;border:2px dashed var(--sepia);box-shadow:6px 6px 0 rgba(122,82,48,.35);transition:.25s}
+.ticket:nth-child(odd){transform:rotate(-1.2deg)}.ticket:nth-child(even){transform:rotate(1.2deg)}
+.ticket:hover{transform:rotate(0) translateY(-8px)}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:var(--paper);border:2px dashed var(--sepia);margin-top:-11px}
+.ticket::before{left:-13px}.ticket::after{right:-13px}
+.ticket .icon{font-size:2.3rem}
+.ticket h3{font-size:1.35rem;margin:8px 0 4px}
+.ticket small{display:block;letter-spacing:2px;color:var(--sepia);font-size:.7rem}
+.price{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:800;color:var(--rust);margin-top:10px}
+.price sup{font-size:1.2rem}
+.price span{display:block;font-family:'Caveat',cursive;font-size:1.3rem;color:var(--ink);font-weight:500;margin-top:-6px}
+.ticket .stamp{position:absolute;top:-14px;right:-10px;background:var(--teal);color:#fff;font-size:.7rem;padding:3px 10px;transform:rotate(8deg);letter-spacing:1px}
+
+/* SCRAPBOOK */
+.scrap{background:rgba(122,82,48,.08);border-block:2px solid rgba(122,82,48,.25)}
+.board{columns:3 260px;column-gap:28px}
+.board figure{break-inside:avoid;margin-bottom:34px;background:#fffdf6;padding:12px 12px 44px;position:relative;box-shadow:0 12px 26px rgba(60,35,10,.3);transition:.3s}
+.board figure:nth-child(3n+1){transform:rotate(-2.5deg)}
+.board figure:nth-child(3n+2){transform:rotate(2deg)}
+.board figure:nth-child(3n){transform:rotate(-.8deg)}
+.board figure:hover{transform:rotate(0) scale(1.03);z-index:5}
+.board img{width:100%;display:block;filter:sepia(.5) contrast(1.05);transition:.3s}
+.board figure:hover img{filter:sepia(.1)}
+.board figcaption{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-family:'Caveat',cursive;font-size:1.35rem}
+.board figure::before{content:"";position:absolute;top:-11px;left:50%;width:80px;height:24px;margin-left:-40px;background:rgba(168,71,43,.5);transform:rotate(3deg);
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 5px,transparent 5px 10px)}
+.board figure:nth-child(even)::before{background-color:rgba(63,107,102,.55)}
+
+/* JOURNAL */
+.journals{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px}
+.page{position:relative;padding:34px 28px 30px 64px;min-height:340px;background:
+  linear-gradient(90deg,transparent 48px,rgba(168,71,43,.5) 48px 50px,transparent 50px),
+  repeating-linear-gradient(transparent 0 31px,rgba(63,107,102,.35) 31px 32px),#fdf6e3;
+  box-shadow:0 14px 28px rgba(60,35,10,.3);border-radius:2px 10px 10px 2px}
+.page::before{content:"";position:absolute;left:14px;top:30px;bottom:30px;width:14px;
+  background:radial-gradient(circle,var(--ink) 5px,transparent 6px) 0 0/14px 70px repeat-y;opacity:.55}
+.page h3{font-family:'Caveat',cursive;font-size:2rem;line-height:32px;color:var(--rust)}
+.page p{font-family:'Caveat',cursive;font-size:1.45rem;line-height:32px;margin-top:0}
+.page .sticker{position:absolute;right:16px;bottom:14px;font-size:2.4rem;transform:rotate(12deg)}
+.page:nth-child(2){transform:rotate(1.5deg)}.page:nth-child(1){transform:rotate(-1.5deg)}.page:nth-child(3){transform:rotate(-.6deg)}
+.page .photo{width:120px;height:90px;object-fit:cover;float:right;margin:0 0 8px 10px;border:6px solid #fffdf6;box-shadow:2px 3px 8px rgba(0,0,0,.3);transform:rotate(4deg);filter:sepia(.6)}
+
+/* CONTACT */
+.contact-card{max-width:760px;margin:0 auto;background:var(--cream);border:3px double var(--sepia);padding:44px 34px;text-align:center;position:relative;box-shadow:10px 10px 0 rgba(122,82,48,.3)}
+.contact-card::before{content:"AIR MAIL";position:absolute;top:-16px;left:30px;background:var(--rust);color:#fff;padding:3px 14px;letter-spacing:3px;font-size:.8rem;transform:rotate(-3deg)}
+.contact-card::after{content:"";position:absolute;inset:0;border:10px solid transparent;border-image:repeating-linear-gradient(45deg,var(--rust) 0 14px,var(--cream) 14px 22px,var(--teal) 22px 36px,var(--cream) 36px 44px) 10;pointer-events:none;opacity:.55}
+.contact-card h2{font-size:2.2rem}
+.rows{display:grid;gap:14px;margin:26px 0;font-size:1.15rem}
+.rows a{text-decoration:none;border-bottom:2px dotted var(--rust)}
+.rows a:hover{color:var(--rust)}
+.wa-btn{background:#1f8f4e;border-color:#1f8f4e;box-shadow:5px 5px 0 var(--ink);display:inline-flex;gap:10px;align-items:center}
+.wa-btn:hover{box-shadow:2px 2px 0 var(--ink)}
+
+footer{background:var(--ink);color:var(--paper);text-align:center;padding:34px 20px;font-size:.9rem;letter-spacing:1px}
+footer .hand{font-size:1.5rem;color:var(--mustard)}
+
+/* FLOATING WHATSAPP + POPUP */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:100;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.wa-fab{width:64px;height:64px;border-radius:50%;background:#25d366;border:3px solid var(--ink);display:grid;place-items:center;box-shadow:4px 4px 0 var(--ink);cursor:pointer;text-decoration:none;animation:pulse 2.2s infinite}
+.wa-fab svg{width:34px;height:34px;fill:#fff}
+@keyframes pulse{0%{box-shadow:4px 4px 0 var(--ink),0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:4px 4px 0 var(--ink),0 0 0 22px rgba(37,211,102,0)}100%{box-shadow:4px 4px 0 var(--ink),0 0 0 0 rgba(37,211,102,0)}}
+.popup{width:min(310px,86vw);background:var(--cream);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--sepia);padding:16px 18px 18px;position:relative;transform:translateY(30px) scale(.9);opacity:0;pointer-events:none;transition:.45s cubic-bezier(.2,1.4,.4,1)}
+.popup.show{transform:none;opacity:1;pointer-events:auto}
+.popup::after{content:"";position:absolute;bottom:-12px;right:26px;width:20px;height:20px;background:var(--cream);border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg)}
+.popup h4{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--rust)}
+.popup p{font-family:'Caveat',cursive;font-size:1.4rem;line-height:1.2;margin:6px 0 12px}
+.popup .btn{padding:8px 16px;font-size:.9rem;box-shadow:3px 3px 0 var(--rust)}
+.popup .x{position:absolute;top:4px;right:10px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:.8s}
+.rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- Inline logo (reused) -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="logo" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="46" fill="#f1e4c8" stroke="#3b2a1a" stroke-width="4"/>
+    <circle cx="50" cy="50" r="38" fill="none" stroke="#a8472b" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <!-- folded paper -->
+    <path d="M26 30h30l14 14v28H26z" fill="#fbf3de" stroke="#3b2a1a" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M56 30v14h14" fill="#e2cfa5" stroke="#3b2a1a" stroke-width="3" stroke-linejoin="round"/>
+    <!-- pixels -->
+    <rect x="34" y="52" width="8" height="8" fill="#a8472b"/>
+    <rect x="42" y="60" width="8" height="8" fill="#3f6b66"/>
+    <rect x="50" y="52" width="8" height="8" fill="#d6a33a"/>
+    <rect x="58" y="60" width="8" height="8" fill="#a8472b"/>
+  </symbol>
+</svg>
+
+<header>
+  <nav>
+    <a class="brand" href="#top" aria-label="Paper and Pixel home">
+      <svg width="52" height="52"><use href="#logo"/></svg>
+      <b>Paper <i>&amp;</i> Pixel</b>
+    </a>
+    <ul>
+      <li><a href="#prices">Prices</a></li>
+      <li><a href="#scrapbook">Scrapbook</a></li>
+      <li><a href="#journals">Journals</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="rv">
+      <span class="est">EST. 2026 · HANDCRAFTED DIGITALLY</span>
+      <h1>Where <span>paper</span> memories meet <span>pixel</span> magic.</h1>
+      <p>Dreamy presentations, tidy spreadsheets, aesthetic Insta inspos, cards and wallpapers — all made with a vintage scrapbook soul. Pocket-friendly, starting at just <b>₹6</b>.</p>
+      <a class="btn" href="#prices">See the price list</a>
+      <a class="btn alt" href="#scrapbook">Peek at the scrapbook</a>
+    </div>
+    <div class="hero-photos rv">
+      <figure class="polaroid p1"><span class="tape"></span><img src="https://picsum.photos/seed/vintage-desk/900/1100" alt="Vintage desk with stationery" loading="eager"><figcaption>desk days</figcaption></figure>
+      <figure class="polaroid p2"><span class="tape"></span><img src="https://picsum.photos/seed/old-letters/900/1100" alt="Old letters and flowers" loading="eager"><figcaption>dear diary ♡</figcaption></figure>
+      <figure class="polaroid p3"><span class="tape"></span><img src="https://picsum.photos/seed/retro-camera/900/1000" alt="Retro camera" loading="eager"><figcaption>golden hour</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="ticker"><div>
+  ✦ PPTs FROM ₹6 ✦ EXCEL &amp; WORD FROM ₹10 ✦ INSTA INSPOS FROM ₹15 ✦ CARDS FROM ₹9 ✦ WALLPAPERS FROM ₹19
+  ✦ PPTs FROM ₹6 ✦ EXCEL &amp; WORD FROM ₹10 ✦ INSTA INSPOS FROM ₹15 ✦ CARDS FROM ₹9 ✦ WALLPAPERS FROM ₹19
+  ✦ PPTs FROM ₹6 ✦ EXCEL &amp; WORD FROM ₹10 ✦ INSTA INSPOS FROM ₹15 ✦ CARDS FROM ₹9 ✦ WALLPAPERS FROM ₹19
+  ✦ PPTs FROM ₹6 ✦ EXCEL &amp; WORD FROM ₹10 ✦ INSTA INSPOS FROM ₹15 ✦ CARDS FROM ₹9 ✦ WALLPAPERS FROM ₹19
+</div></div>
+
+<section id="prices">
+  <div class="wrap">
+    <div class="title rv"><div class="hand">the little price list</div><h2>What we make</h2></div>
+    <div class="grid">
+      <article class="ticket rv"><span class="stamp">BESTSELLER</span><div class="icon">📽️</div><small>PRESENTATIONS</small><h3>PPTs</h3><div class="price"><sup>₹</sup>6<span>starting at</span></div></article>
+      <article class="ticket rv"><div class="icon">📊</div><small>SHEETS &amp; DOCS</small><h3>Excel &amp; Word</h3><div class="price"><sup>₹</sup>10<span>starting at</span></div></article>
+      <article class="ticket rv"><div class="icon">📸</div><small>FEED GOALS</small><h3>Insta Inspos</h3><div class="price"><sup>₹</sup>15<span>starting at</span></div></article>
+      <article class="ticket rv"><div class="icon">💌</div><small>GREETINGS</small><h3>Cards</h3><div class="price"><sup>₹</sup>9<span>starting at</span></div></article>
+      <article class="ticket rv"><span class="stamp">NEW</span><div class="icon">🖼️</div><small>ULTRA HD</small><h3>Wallpapers</h3><div class="price"><sup>₹</sup>19<span>starting at</span></div></article>
+    </div>
+    <p class="hand rv" style="text-align:center;font-size:1.5rem;margin-top:34px">Final price depends on pages &amp; design details — just message us and we'll quote it! ✿</p>
+  </div>
+</section>
+
+<section id="scrapbook" class="scrap">
+  <div class="wrap">
+    <div class="title rv"><div class="hand">pinned, taped &amp; treasured</div><h2>The Scrapbook Wall</h2></div>
+    <div class="board">
+      <figure class="rv"><img src="https://picsum.photos/seed/pp-aesthetic1/1600/1200" alt="Aesthetic flat lay" loading="lazy"><figcaption>sunday flat lay</figcaption></figure>
+      <figure class="rv"><img src="https://picsum.photos/seed/pp-aesthetic2/1200/1600" alt="Pressed flowers" loading="lazy"><figcaption>pressed petals</figcaption></figure>
+      <figure class="rv"><img src="https://picsum.photos/seed/pp-aesthetic3/1600/1100" alt="Coffee and notebook" loading="lazy"><figcaption>chai &amp; notes</figcaption></figure>
+      <figure class="rv"><img src="https://picsum.photos/seed/pp-aesthetic4/1200/1500" alt="Vintage books" loading="lazy"><figcaption>old books smell</figcaption></figure>
+      <figure class="rv"><img src="https://picsum.photos/seed/pp-aesthetic5/1600/1200" alt="Film strip memories" loading="lazy"><figcaption>film roll #7</figcaption></figure>
+      <figure class="rv"><img src="https://picsum.photos/seed/pp-aesthetic6/1200/1600" alt="Window light" loading="lazy"><figcaption>window light</figcaption></figure>
+    </div>
+    <p class="hand" style="text-align:center;font-size:1.3rem;opacity:.75">(Swap these sample photos with your own favourite aesthetic shots — just replace each image link.)</p>
+  </div>
+</section>
+
+<section id="journals">
+  <div class="wrap">
+    <div class="title rv"><div class="hand">torn from the diary</div><h2>Scrapbook Journals</h2></div>
+    <div class="journals">
+      <div class="page rv">
+        <img class="photo" src="https://picsum.photos/seed/pp-j1/600/450" alt="" loading="lazy">
+        <h3>Dear Paper,</h3>
+        <p>Today I stuck a ticket stub, a dried marigold and a doodle on one page. Everything feels like a tiny museum of my week.</p>
+        <span class="sticker">🌼</span>
+      </div>
+      <div class="page rv">
+        <img class="photo" src="https://picsum.photos/seed/pp-j2/600/450" alt="" loading="lazy">
+        <h3>Pixel Diaries</h3>
+        <p>Made a wallpaper at midnight with sepia skies &amp; a cursive quote. Saved it. Smiled. Repeat tomorrow.</p>
+        <span class="sticker">🌙</span>
+      </div>
+      <div class="page rv">
+        <img class="photo" src="https://picsum.photos/seed/pp-j3/600/450" alt="" loading="lazy">
+        <h3>Little Joys List</h3>
+        <p>1. rain on the window · 2. new stationery · 3. a perfect slide deck · 4. warm tea · 5. you reading this ♡</p>
+        <span class="sticker">☕</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card rv">
+      <svg width="86" height="86"><use href="#logo"/></svg>
+      <h2>Write to us</h2>
+      <p class="hand" style="font-size:1.6rem;color:var(--rust)">we reply faster than a postman ✉</p>
+      <div class="rows">
+        <div>📧 <a href="mailto:saachigupta52@gmail.com">saachigupta52@gmail.com</a></div>
+        <div>📞 <a href="tel:+918830485853">+91 88304 85853</a></div>
+      </div>
+      <a class="btn wa-btn" target="_blank" rel="noopener" href="https://wa.me/918830485853?text=Hi%20Paper%20%26%20Pixel!%20I%27d%20like%20to%20place%20an%20order.">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="#fff"><path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.8 1.500 5.900 1.500 6.900 0 12.600-5.600 12.600-12.500S22.900 3 16 3zm0 22.800c-1.900 0-3.700-.5-5.300-1.500l-.4-.2-4.400 1.200 1.200-4.300-.3-.4c-1-1.600-1.500-3.400-1.500-5.200C5.300 9.700 10.100 5 16 5s10.700 4.700 10.700 10.500S21.900 25.800 16 25.800zm5.900-7.800c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7.100c-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.300-.2-.3 0-.5.100-.7l.5-.6c.2-.2.200-.3.300-.5.100-.2.100-.4 0-.6-.1-.2-.7-1.700-1-2.300-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400-.3.300-1.200 1.100-1.200 2.800s1.200 3.300 1.400 3.500c.2.200 2.400 3.700 5.900 5.100.8.400 1.500.6 2 .8.8.3 1.600.2 2.200.1.700-.1 1.900-.8 2.200-1.500.3-.7.300-1.400.2-1.500-.1-.2-.3-.3-.6-.4z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="hand">Made with paper, pixels &amp; a lot of chai ☕</div>
+  <div>© <span id="yr">2026</span> PAPER &amp; PIXEL · ALL RIGHTS RESERVED</div>
+</footer>
+
+<!-- Floating WhatsApp + welcome message -->
+<div class="wa-float">
+  <div class="popup" id="popup" role="dialog" aria-label="Chat message">
+    <button class="x" id="closePop" aria-label="Close">×</button>
+    <h4>Paper &amp; Pixel says hi! ✿</h4>
+    <p>Need a PPT, card, wallpaper or insta inspo? Message us on WhatsApp — prices start at just ₹6!</p>
+    <a class="btn" target="_blank" rel="noopener" href="https://wa.me/918830485853?text=Hi%20Paper%20%26%20Pixel!%20I%27d%20like%20to%20place%20an%20order.">Start chat →</a>
+  </div>
+  <a class="wa-fab" target="_blank" rel="noopener" aria-label="Open WhatsApp chat" href="https://wa.me/918830485853?text=Hi%20Paper%20%26%20Pixel!%20I%27d%20like%20to%20place%20an%20order.">
+    <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.400 8.600 3.400 15.500c0 2.300.6 4.400 1.700 6.300L3 29l7.400-2c1.800 1 3.800 1.500 5.900 1.500 6.900 0 12.600-5.600 12.600-12.500S22.900 3 16 3zm5.900 15c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7.100c-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.300-.2-.3 0-.5.100-.7l.5-.6c.2-.2.200-.3.300-.5.100-.2.100-.4 0-.6-.1-.2-.7-1.700-1-2.300-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400-.3.300-1.200 1.100-1.200 2.800s1.200 3.300 1.400 3.500c.2.200 2.400 3.700 5.900 5.100.8.400 1.500.6 2 .8.8.3 1.600.2 2.200.1.700-.1 1.900-.8 2.200-1.500.3-.7.300-1.400.2-1.500-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+</div>
+
+<script>
+  // Welcome message pops up after a short delay
+  const pop = document.getElementById('popup');
+  setTimeout(()=>pop.classList.add('show'), 2500);
+  document.getElementById('closePop').onclick = ()=>pop.classList.remove('show');
+  // re-nudge once more after a while if closed
+  setTimeout(()=>{ if(!pop.classList.contains('show')) pop.classList.add('show'); }, 30000);
+
+  // Scroll reveal
+  const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
